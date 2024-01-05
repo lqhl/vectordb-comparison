@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    max-width: 1000px; /* 最大宽度限制 */
+    margin: auto;
     background-color: #f0f0f0;
-    margin: 0;
     padding: 20px;
 }
 
@@ -42,7 +43,7 @@ td:hover {
     opacity: 0;
 }
 
-td:hover .note {
+th:hover .note, td:hover .note {
     visibility: visible;
     opacity: 1;
 }

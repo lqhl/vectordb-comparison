@@ -1,63 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px; /* 最大宽度限制 */
-            margin: auto;
-            background-color: #f0f0f0;
-            padding: 20px;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-
-        td {
-            background-color: #f5f5f5;
-        }
-    </style>
+    <title>Comparison of Vector Databases</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
 <h1>Comparison of Vector Databases</h1>
 
+<p>
+Welcome to the Comparison of Vector Databases page. This resource provides a detailed comparison of various vector databases to help you understand their features and capabilities. For updates and contributions, visit our repository at <a href="https://github.com/lqhl/vectordb-comparison/">https://github.com/lqhl/vectordb-comparison/</a> and feel free to submit pull requests.
+</p>
+<p>
+This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>.
+</p>
+
 <table>
     <tr>
         <th></th>
-        <th>MyScale</th>
-        <th>Pinecone</th>
-        <th>Qdrant</th>
-        <th>Weaviate</th>
-        <th>Milvus (Zilliz)</th>
-        <th>Chroma</th>
-        <th>Postgres with pgvector</th>
-        <th>OpenSearch</th>
+        <th><a href="https://myscale.com/">MyScale</a></th>
+        <th><a href="https://pinecone.io/">Pinecone</a></th>
+        <th><a href="https://qdrant.tech/">Qdrant</a></th>
+        <th><a href="https://weaviate.io/">Weaviate</a></th>
+        <th><a href="https://milvus.io/">Milvus</a></th>
+        <th><a href="https://www.trychroma.com/">Chroma</a></th>
+        <th><a href="https://github.com/pgvector/pgvector">Postgres with pgvector</a></th>
+        <th><a href="https://opensearch.org/">OpenSearch</a></th>
     </tr>
     <tr>
         <td>Purpose-built for vector search</td>
+        <td>✅
+            <span class="note">MyScale is built atop ClickHouse with focus on vector search.</span>
+        </td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
-        <td>✅</td>
-        <td>❌</td>
-        <td>❌</td>
+        <td>❌
+            <span class="note">Postgres is a relational database.</span>
+        </td>
+        <td>❌
+            <span class="note">OpenSearch is a full-text search engine. It recently added vector search support.</span>
+        </td>
     </tr>
     <tr>
         <td>Managed cloud</td>
@@ -65,10 +50,16 @@
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
-        <td>✅</td>
+        <td>✅
+            <span class="note">Provided by <a href="https://zilliz.com/">Zilliz</a>.</span>
+        </td>
         <td>❌</td>
-        <td>✅</td>
-        <td>✅</td>
+        <td>✅
+            <span class="note">There are many cloud providers for pgvector, including <a href="https://supabase.com/">Supabase</a>.</span>
+        </td>
+        <td>✅
+            <span class="note">Provided by <a href="https://aws.amazon.com/opensearch-service/">Amazon OpenSearch Service</a>.</span>
+        </td>
     </tr>
     <tr>
         <td>Self-host</td>
@@ -95,32 +86,50 @@
     <tr>
         <td>SQL support</td>
         <td>✅</td>
-        <td>❌</td>
+        <td>❌
+            <span class="note">Pinecone provides <a href="https://docs.pinecone.io/reference/">RESTful API</a> not SQL.</span>
+        </td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
         <td>✅</td>
-        <td>✅</td>
+        <td>✅
+            <span class="note">OpenSearch provides <a href="https://opensearch.org/docs/latest/search-plugins/sql/index/">SQL support</a>.</span>
+        </td>
     </tr>
     <tr>
         <td>Supported index types</td>
-        <td>MSTG, HNSW, IVF</td>
+        <td>MSTG, HNSW, IVF
+            <span class="note">Details can be found in their <a href="https://myscale.com/docs/en/vector-search/">docs</a>.</span>
+        </td>
+        <td>HNSW, FreshDiskANN
+            <span class="note">Details can be found in their blog <a href="https://www.pinecone.io/blog/hnsw-not-enough/">Great Algorithms Are Not Enough</a>.</span>
+        </td>
         <td>HNSW</td>
         <td>HNSW</td>
-        <td>HNSW</td>
-        <td>HNSW, IVF, DiskANN</td>
+        <td>HNSW, IVF, ScaNN, DiskANN
+            <span class="note">Details can be found in their <a href="https://milvus.io/docs/index.md">docs</a>.</span>
+        </td>
         <td>HNSW</td>
         <td>HNSW, IVF</td>
         <td>HNSW</td>
     </tr>
     <tr>
         <td>Disk index support</td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
+        <td>✅
+            <span class="note">They mention that <a href="https://myscale.com/blog/myscale-on-aws/">NVMe SSD is used</a>.</span>
+        </td>
+        <td>✅
+            <span class="note">They support FreshDiskANN which is a disk index.</span>
+        </td>
+        <td>✅
+            <span class="note">Qdrant supports <a href="https://qdrant.tech/documentation/concepts/storage/">disk storage with memory map</a>.</span>
+        </td>
         <td>❌</td>
-        <td>✅</td>
+        <td>✅
+            <span class="note">They support DiskANN which is a disk index.</span>
+        </td>
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
@@ -139,10 +148,16 @@
     <tr>
         <td>Time-based metadata filtering</td>
         <td>✅</td>
-        <td>🔶</td>
-        <td>🔶</td>
+        <td>🔶
+            <span class="note">Pinecone does not support time or date types, and users need to convert time/date to integer in-order to filter on time.</span>
+        </td>
+        <td>🔶
+            <span class="note">Qdrant does not support time or date types, and users need to convert time/date to integer in-order to filter on time.</span>
+        </td>
         <td>✅</td>
-        <td>🔶</td>
+        <td>🔶
+            <span class="note">Milvus does not support time or date types, and users need to convert time/date to integer in-order to filter on time.</span>
+        </td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
@@ -159,18 +174,26 @@
         <td>✅</td>
     </tr>
     <tr>
-        <td>Hybrid search</td>
-        <td>🔶</td>
+        <td>Hybrid search
+            <span class="note">Hybrid search is the ability to search on vectors and text (using a fulltext index or sparse vector index) at the same time.</span>
+        </td>
+        <td>🔶
+            <span class="note">MyScale supports <a href="https://myscale.com/docs/en/hybrid-search/">hybrid search</a> but the current implementation does not utilize a full-text index or sparse vector index which makes it inefficient.</span>
+        </td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
-        <td>❌</td>
+        <td>❌
+            <span class="note">Milvus uses the phrase “hybrid search”, but it means metadata filtering.</span>
+        </td>
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
     </tr>
     <tr>
-        <td>Cost effectiveness of vector search (lower is better)</td>
+        <td>Cost effectiveness of vector search (lower is better)
+            <span class="note">This is the cost of running the benchmark on a cloud provider. Provided by <a href="https://myscale.github.io/benchmark/">MyScale</a></span>
+        </td>
         <td>30</td>
         <td>181</td>
         <td>125</td>
@@ -181,15 +204,23 @@
         <td>616</td>
     </tr>
     <tr>
-        <td>Cost effectiveness of filtered vector search (lower is better)</td>
+        <td>Cost effectiveness of filtered vector search (lower is better)
+            <span class="note">This is the cost of running the benchmark on a cloud provider. Provided by <a href="https://myscale.github.io/benchmark/">MyScale</a></span>
+        </td>
         <td>83</td>
         <td>449</td>
         <td>368</td>
-        <td>Failed to complete</td>
+        <td>Crashed
+            <span class="note">Weaviate crashed during the benchmark.</span>
+        </td>
         <td>285</td>
         <td>N/A</td>
-        <td>Failed to complete</td>
-        <td>Failed to complete</td>
+        <td>Low precision
+            <span class="note">Postgres with pgvector has low precision (less than 50%).</span>
+        </td>
+        <td>Low precision
+            <span class="note">OpenSearch has low precision (less than 50%).</span>
+        </td>
     </tr>
 </table>
 
