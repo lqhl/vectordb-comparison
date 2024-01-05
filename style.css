@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 1000px; /* 最大宽度限制 */
+    max-width: 1000px;
     margin: auto;
     background-color: #f0f0f0;
     padding: 20px;
@@ -16,7 +16,7 @@ th, td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
-    position: relative; /* 用于定位注释 */
+    position: relative; /* for annotation */
 }
 
 th {

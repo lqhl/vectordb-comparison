@@ -55,7 +55,10 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>.
         </td>
         <td>❌</td>
         <td>✅
-            <span class="note">There are many cloud providers for pgvector, including <a href="https://supabase.com/">Supabase</a>.</span>
+            <span class="note">There are many cloud providers for pgvector, including
+                <a href="https://supabase.com/">Supabase</a>,
+                <a href="https://aws.amazon.com/about-aws/whats-new/2023/05/amazon-rds-postgresql-pgvector-ml-model-integration/">Amazon RDS for PostgreSQL</a>
+                etc.</span>
         </td>
         <td>✅
             <span class="note">Provided by <a href="https://aws.amazon.com/opensearch-service/">Amazon OpenSearch Service</a>.</span>
@@ -180,15 +183,25 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>.
         <td>🔶
             <span class="note">MyScale supports <a href="https://myscale.com/docs/en/hybrid-search/">hybrid search</a> but the current implementation does not utilize a full-text index or sparse vector index which makes it inefficient.</span>
         </td>
-        <td>✅</td>
-        <td>✅</td>
-        <td>✅</td>
+        <td>✅
+            <span class="note">Pinecone supports hybrid search with <a href="https://www.pinecone.io/learn/hybrid-search-intro/">sparse vector index</a>.</span>
+        </td>
+        <td>✅
+            <span class="note">Qdrant supports hybrid search with <a href="https://qdrant.tech/articles/hybrid-search/">full-text index</a> and <a href="https://qdrant.tech/articles/sparse-vectors/">sparse vector index</a>.</span>
+        </td>
+        <td>✅
+            <span class="note">Weaviate supports hybrid search with <a href="https://weaviate.io/blog/hybrid-search-explained">sparse vector index</a>.</span>
+        </td>
         <td>❌
             <span class="note">Milvus uses the phrase “hybrid search”, but it means metadata filtering.</span>
         </td>
         <td>❌</td>
-        <td>✅</td>
-        <td>✅</td>
+        <td>🔶
+            <span class="note">Postgres supports hybrid search by utilizing <a href="https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search.py">postprocessing outside the database</a>.</span>
+        </td>
+        <td>✅
+            <span class="note">OpenSearch supports hybrid search with <a href="https://opensearch.org/docs/latest/query-dsl/compound/hybrid/">full-text index</a>.</span>
+        </td>
     </tr>
     <tr>
         <td>Cost effectiveness of vector search (lower is better)
