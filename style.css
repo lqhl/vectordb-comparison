@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+    position: relative; /* 用于定位注释 */
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+td:hover {
+    background-color: #f5f5f5;
+}
+
+.note {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: visibility 0.2s, opacity 0.2s linear;
+    opacity: 0;
+}
+
+td:hover .note {
+    visibility: visible;
+    opacity: 1;
+}

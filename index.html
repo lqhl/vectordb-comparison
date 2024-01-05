@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px; /* 最大宽度限制 */
+            margin: auto;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        td {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Comparison of Vector Databases</h1>
+
+<table>
+    <tr>
+        <th></th>
+        <th>MyScale</th>
+        <th>Pinecone</th>
+        <th>Qdrant</th>
+        <th>Weaviate</th>
+        <th>Milvus (Zilliz)</th>
+        <th>Chroma</th>
+        <th>Postgres with pgvector</th>
+        <th>OpenSearch</th>
+    </tr>
+    <tr>
+        <td>Purpose-built for vector search</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+    </tr>
+    <tr>
+        <td>Managed cloud</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Self-host</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Open-source</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>SQL support</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Supported index types</td>
+        <td>MSTG, HNSW, IVF</td>
+        <td>HNSW</td>
+        <td>HNSW</td>
+        <td>HNSW</td>
+        <td>HNSW, IVF, DiskANN</td>
+        <td>HNSW</td>
+        <td>HNSW, IVF</td>
+        <td>HNSW</td>
+    </tr>
+    <tr>
+        <td>Disk index support</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+    </tr>
+    <tr>
+        <td>Metadata filtering</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Time-based metadata filtering</td>
+        <td>✅</td>
+        <td>🔶</td>
+        <td>🔶</td>
+        <td>✅</td>
+        <td>🔶</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Aggregations</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Hybrid search</td>
+        <td>🔶</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td>Cost effectiveness of vector search (lower is better)</td>
+        <td>30</td>
+        <td>181</td>
+        <td>125</td>
+        <td>501</td>
+        <td>152</td>
+        <td>N/A</td>
+        <td>64</td>
+        <td>616</td>
+    </tr>
+    <tr>
+        <td>Cost effectiveness of filtered vector search (lower is better)</td>
+        <td>83</td>
+        <td>449</td>
+        <td>368</td>
+        <td>Failed to complete</td>
+        <td>285</td>
+        <td>N/A</td>
+        <td>Failed to complete</td>
+        <td>Failed to complete</td>
+    </tr>
+</table>
+
+</body>
+</html>
