@@ -46,7 +46,8 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <th><a href="https://weaviate.io/">Weaviate</a></th>
         <th><a href="https://milvus.io/">Milvus</a></th>
         <th><a href="https://www.trychroma.com/">Chroma</a></th>
-        <th><a href="https://github.com/pgvector/pgvector">Postgres with pgvector</a></th>
+        <th><a href="https://github.com/pgvector/pgvector">Postgres (pgvector)</a></th>
+        <th><a href="https://github.com/tensorchord/pgvecto.rs">Postgres (pgvecto.rs)</a></th>
         <th><a href="https://opensearch.org/">OpenSearch</a></th>
     </tr>
     <tr>
@@ -59,6 +60,9 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>❌
+            <span class="note">Postgres is a relational database.</span>
+        </td>
         <td>❌
             <span class="note">Postgres is a relational database.</span>
         </td>
@@ -82,6 +86,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
                 <a href="https://aws.amazon.com/about-aws/whats-new/2023/05/amazon-rds-postgresql-pgvector-ml-model-integration/">Amazon RDS for PostgreSQL</a>
                 etc.</span>
         </td>
+        <td> </td>
         <td>✅
             <span class="note">Provided by <a href="https://aws.amazon.com/opensearch-service/">Amazon OpenSearch Service</a>.</span>
         </td>
@@ -90,6 +95,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>Self-host</td>
         <td>❌</td>
         <td>❌</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -107,6 +113,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
     </tr>
     <tr>
         <td>SQL support</td>
@@ -118,6 +125,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅
             <span class="note">OpenSearch provides <a href="https://opensearch.org/docs/latest/search-plugins/sql/index/">SQL support</a>.</span>
@@ -137,6 +145,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
             <span class="note">Details can be found in their <a href="https://milvus.io/docs/index.md">docs</a>.</span>
         </td>
         <td>HNSW</td>
+        <td>HNSW, IVF</td>
         <td>HNSW, IVF</td>
         <td>HNSW</td>
     </tr>
@@ -158,9 +167,11 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>❌</td>
         <td>❌</td>
         <td>❌</td>
+        <td>❌</td>
     </tr>
     <tr>
         <td>Metadata filtering</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
         <td>✅</td>
@@ -186,6 +197,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>❌</td>
         <td>✅</td>
         <td>✅</td>
+        <td>✅</td>
     </tr>
     <tr>
         <td>Geospatial data support</td>
@@ -205,6 +217,9 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
             <span class="note">Postgres supports geospatial data with another plugin <a href="https://postgis.net/">PostGIS</a>.</span>
         </td>
         <td>✅
+            <span class="note">Postgres supports geospatial data with another plugin <a href="https://postgis.net/">PostGIS</a>.</span>
+        </td>
+        <td>✅
             <span class="note">OpenSearch supports <a href="https://opensearch.org/docs/2.3/opensearch/supported-field-types/geo-point/">geospatial data</a>.</span>
         </td>
     </tr>
@@ -216,6 +231,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>✅</td>
         <td>❌</td>
         <td>❌</td>
+        <td>✅</td>
         <td>✅</td>
         <td>✅</td>
     </tr>
@@ -242,6 +258,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>🔶
             <span class="note">Postgres supports hybrid search by utilizing <a href="https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search.py">postprocessing outside the database</a>.</span>
         </td>
+        <td> </td>
         <td>✅
             <span class="note">OpenSearch supports hybrid search with <a href="https://opensearch.org/docs/latest/query-dsl/compound/hybrid/">full-text index</a>.</span>
         </td>
@@ -260,6 +277,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>152</td>
         <td>N/A</td>
         <td>64</td>
+        <td>161</td>
         <td>616</td>
     </tr>
     <tr>
@@ -280,6 +298,7 @@ This page is maintained by <a href="https://github.com/lqhl/">lqhl</a>. Follow m
         <td>Low precision
             <span class="note">Postgres with pgvector has low precision (less than 50%).</span>
         </td>
+        <td>739</td>
         <td>Low precision
             <span class="note">OpenSearch has low precision (less than 50%).</span>
         </td>
