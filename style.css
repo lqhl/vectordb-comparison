@@ -1,31 +1,57 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1000px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
     margin: auto;
-    background-color: #f0f0f0;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
     padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #00aaff;
+}
+
+p {
+    text-align: center;
+    color: #cccccc;
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     text-align: left;
-    padding: 8px;
+    padding: 15px;
     position: relative; /* for annotation */
 }
 
 th {
-    background-color: #007bff;
-    color: white;
+    background-color: #003366;
+    color: #f0f0f0;
+    font-weight: 700;
 }
 
-td:hover {
-    background-color: #f5f5f5;
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+tr:hover {
+    background-color: #3a3a3a;
 }
 
 .note {
@@ -33,14 +59,16 @@ td:hover {
     position: absolute;
     bottom: 100%;
     left: 20px;
-    background-color: #007bff;
+    background-color: #003366;
     color: white;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
     z-index: 1;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     transition: visibility 0.2s, opacity 0.2s linear;
     opacity: 0;
+    width: 250px;
+    font-size: 0.9em;
 }
 
 th:hover .note, td:hover .note {
